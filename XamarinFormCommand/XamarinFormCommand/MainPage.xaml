@@ -1,13 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:XamarinFormCommand"
-             x:Class="XamarinFormCommand.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+<ContentPage
+    x:Class="XamarinFormCommand.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:XamarinFormCommand">
+    <StackLayout Padding="0,20,0,0">
+        <Label
+            FontAttributes="Bold"
+            HorizontalOptions="Center"
+            Text="Commanding Demo" />
+        <Label FontAttributes="Bold" Text="Demo 1 - Command" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Enter number:" />
+            <Entry Text="{Binding Number, Mode=TwoWay}" WidthRequest="50" />
         </StackLayout>
-    </ContentPage.Content>
+        <Button
+            Command="{Binding SquareRootCommand}"
+            HorizontalOptions="Center"
+            Text="Calculate Square Root" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Square root =" />
+            <Label Text="{Binding SquareRootResult}" />
+        </StackLayout>
+        <Label FontAttributes="Bold" Text="Demo 2 - Command with Parameter" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Enter number:" />
+            <Entry
+                x:Name="entry"
+                Text="100"
+                WidthRequest="50" />
+        </StackLayout>
+        <Button
+            Command="{Binding SquareRootWithParameterCommand}"
+            CommandParameter="{Binding Source={x:Reference entry}, Path=Text}"
+            HorizontalOptions="Center"
+            Text="Calculate Square Root" />
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Square root =" />
+            <Label Text="{Binding SquareRootWithParameterResult}" />
+        </StackLayout>
+    </StackLayout>
 </ContentPage>

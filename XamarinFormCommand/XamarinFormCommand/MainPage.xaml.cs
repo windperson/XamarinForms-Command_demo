@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+using XamarinFormCommand.ViewModel;
 
 namespace XamarinFormCommand
 {
@@ -12,6 +13,7 @@ namespace XamarinFormCommand
         public MainPage()
         {
             InitializeComponent();
+            BindingContext = new MyViewModel();
         }
     }
 }

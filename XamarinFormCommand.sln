@@ -11,6 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinFormCommand.UWP", "X
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XamarinFormCommand.iOS", "XamarinFormCommand\XamarinFormCommand.iOS\XamarinFormCommand.iOS.csproj", "{DF2C8210-60CC-4B34-83FF-819131E2486A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{373F59AA-6776-4A7C-9548-06224177E96E}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
