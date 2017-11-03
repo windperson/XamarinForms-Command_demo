@@ -39,5 +39,21 @@
             <Label Text="Square root =" />
             <Label Text="{Binding SquareRootWithParameterResult}" />
         </StackLayout>
+
+        <Label FontAttributes="Bold" Text="Demo 3 - Async Command with CanExecute" />
+
+        <Button
+            Command="{Binding SimulateDownloadCommand}"
+            HorizontalOptions="Center"
+            Text="Simulate 5 Second Download" />
+
+        <StackLayout Orientation="Horizontal">
+
+            <Label Text="Result: " />
+
+            <Label Text="{Binding SimulatedDownloadResult}" />
+
+        </StackLayout>
+
     </StackLayout>
 </ContentPage>
