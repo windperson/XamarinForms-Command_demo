@@ -55,5 +55,22 @@
 
         </StackLayout>
 
+        <Label FontAttributes="Bold" Text="Demo 4 - Link Event to Command" />
+
+        <!--  TODO: add touch gesture on this Label  -->
+        <Label
+            FontAttributes="Italic"
+            HeightRequest="30"
+            HorizontalTextAlignment="Center"
+            Text="Press me"
+            TextColor="Blue"
+            VerticalTextAlignment="Center"
+            WidthRequest="80" />
+
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Square root =" />
+            <Label Text="{Binding InvokeFromEventCommandResult}" />
+        </StackLayout>
+
     </StackLayout>
 </ContentPage>

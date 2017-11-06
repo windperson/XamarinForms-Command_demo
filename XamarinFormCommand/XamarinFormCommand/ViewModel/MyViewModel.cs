@@ -31,6 +31,7 @@ namespace XamarinFormCommand.ViewModel
         public ICommand SquareRootCommand { get; private set; }
         public ICommand SquareRootWithParameterCommand { get; private set; }
         public ICommand SimulateDownloadCommand { get; private set; }
+        public ICommand InvokeFromEventCommand { get; private set; }
 
         #endregion
 
@@ -42,6 +43,8 @@ namespace XamarinFormCommand.ViewModel
         public double SquareRootResult { get; private set; }
         public double SquareRootWithParameterResult { get; private set; }
 
+        public double InvokeFromEventCommandResult { get; private set; }
+
         #endregion
 
         public MyViewModel()
@@ -50,6 +53,7 @@ namespace XamarinFormCommand.ViewModel
             SquareRootCommand = new Command(CalculateSquerRoot);
             SquareRootWithParameterCommand = new Command<string>(CalculateSquerRoot);
             SimulateDownloadCommand = new Command(async () => await SimulateDownloadAsync(), () => canDownload);
+            InvokeFromEventCommand = new Command<string>(DoCalculateSquerRoot);
         }
 
 
@@ -113,6 +117,17 @@ namespace XamarinFormCommand.ViewModel
                     break;
                 }
             }
+        }
+
+        #endregion
+
+        #region InvokeFromEventCommand Demo
+
+        private void DoCalculateSquerRoot(string value)
+        {
+            double num = Convert.ToDouble(value);
+            InvokeFromEventCommandResult = Math.Sqrt(num);
+            OnPropertyChanged("InvokeFromEventCommandResult");
         }
 
         #endregion
